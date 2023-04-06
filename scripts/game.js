@@ -117,11 +117,12 @@ const questionDisplay = (questionNumber) => {
 
 
 let questionNumber = 0
-let amountOfQuestions = questionsTable.length
 const Game = () => {
+    let amountOfQuestions = questionsTable.length
     const teamsStats = document.getElementById('game-teams-stats')
     teamsStats.innerHTML = "<div class='team-stats-wrapper'><button class='x-button' onclick='badAnswer(1)'>X</button><div class='team-stats' id='team-statsA'><a>" + teamAName + "</a><a>" + PointsA + "</a></div><div class='x-wrapper' id='x-wrapperA'></div></div>"
     teamsStats.innerHTML += "<div class='team-stats-wrapper'><div class='x-wrapper' id='x-wrapperB'></div><div class='team-stats' id='team-statsB'><a>" + PointsB + "</a><a>" + teamBName + "</a></div><button class='x-button' onclick='badAnswer(2)'>X</button></div>"
+    console.error(amountOfQuestions)
     if(questionNumber<amountOfQuestions){
         document.getElementById('audio-dzingiel').volume = 0.1
         document.getElementById('audio-dzingiel').play()
