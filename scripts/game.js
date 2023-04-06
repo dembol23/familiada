@@ -79,13 +79,13 @@ const setTeamPoints = (team) => {
     Game()
 }
 
-let roundPoints
+let roundPoints=0
 const goodAnswer = (answerNumber, questionNumber, noPoints) => {
     document.getElementById(answerNumber).style.color = '#FFB01F'
     document.getElementById('audio-good').play()
     if(noPoints != 0){
         const points = questionsTable[questionNumber][answerNumber][1]
-        roundPoints += points
+        roundPoints += Number(points)
         document.getElementById('points-banner').innerHTML = roundPoints
     }
 }
@@ -131,7 +131,7 @@ const Game = () => {
     }
     else{
         const main = document.getElementById('game-question-wrapper')
-        const winningTeam = teamAName
+        let winningTeam = teamAName
         if(PointsB > PointsA) {
             winningTeam = teamBName
         }
